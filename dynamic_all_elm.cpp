@@ -95,10 +95,33 @@ int main()
     cout << "Enter the number of movements: ";
     cin >> numMovements;
 
-    cout << "\nCounts in the Initial Matrix:" << endl;
-    cout << "Number of '0's: " << zeroCount << endl;
-    cout << "Number of '1's: " << oneCount << endl;
-    cout << "Number of '2's: " << twoCount << endl;
+     // Recalculate the counts of '1's, '2's, and '0's in the updated matrix
+        int updatedOneCount = 0, updatedTwoCount = 0, updatedZeroCount = 0;
+        for (int x = 0; x < rows; ++x)
+        {
+            for (int y = 0; y < cols; ++y)
+            {
+                if (matrix[x][y] == 1)
+                {
+                    updatedOneCount++;
+                }
+                else if (matrix[x][y] == 2)
+                {
+                    updatedTwoCount++;
+                }
+                else if (matrix[x][y] == 0)
+                {
+                    updatedZeroCount++;
+                }
+            }
+        }
+
+        // Print the updated counts
+        cout << "\nCounts before any Movement "<< endl;
+        cout << "Number of '0's: " << updatedZeroCount << endl;
+        cout << "Number of '1's: " << updatedOneCount << endl;
+        cout << "Number of '2's: " << updatedTwoCount << endl;
+
 
     for (int movement = 1; movement <= numMovements; ++movement)
     {
