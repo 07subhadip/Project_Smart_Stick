@@ -126,6 +126,10 @@ int main()
                         newMatrix[x][y] = 2; // If the move is invalid, stay in the same position
                     }
                 }
+                else if (matrix[x][y] ==1)
+                {
+                    newMatrix[x][y] = 1;
+                }
             }
         }
 
